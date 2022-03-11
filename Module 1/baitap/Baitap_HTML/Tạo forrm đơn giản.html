@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo forrm đơn giản</title>
+    <style>
+        form {
+            width: 700px;
+            margin: 0px auto;
+        }
+        div {
+            background: orangered;
+            margin-top: -20px;
+            height: 30px;
+            text-align: center;
+            vertical-align: center;
+        }
+        td {
+            font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+            color: gold;
+        }
+        p {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<form action="Tạo%20forrm%20đơn%20giản.html" method="get">
+    <fieldset>
+    <div><h2 style="color: aliceblue">SỞ THÍCH CỦA BẠN</h2></div>
+        <br>
+    <p style="margin-left: 40px">Họ và tên <input type="text" name="yourname"/></p>
+        <p style="margin-left: 64px">Email <input type="text" name="email"/></p>
+    <table style="margin-left: 45px">
+        <tr>
+            <td rowspan="3" style="vertical-align:top" >Sở thích</td>
+            <td><input type="checkbox" name="hobby" value="TT"/>Thể thao</td>
+            <td><input type="checkbox" name="hobby" value="AN"/>Âm nhạc</td>
+            <td><input type="checkbox" name="hobby" value="DS"/>Đọc sách</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="hobby" value="LW"/>Lướt web</td>
+            <td><input type="checkbox" name="hobby" value="CG"/>Chơi game</td>
+            <td><input type="checkbox" name="hobby" value="ĐA"/>Điện ảnh</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" name="hobby" value="DL"/>Du lịch</td>
+        </tr>
+</table>
+    <input type="submit" name="btSubmit" value="Gửi thông tin" style="margin-left: 105px"/>
+    <input type="reset" value="Nhập lại"/>
+        </fieldset>
+</form>
+</body>
+</html>
