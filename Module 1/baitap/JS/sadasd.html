@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>thuat toan va bien</title>
+    <style>
+        body{
+            background-color: azure;
+            font-family: Arial;
+        }
+    </style>
+
+</head>
+<body>
+<p> khi nhan va giu phim thi nen chuyen sang mau do. tha ra thi thanh mau xanh</p>
+<input type="text" value="" name="input1" id="input1" onkeyup="keyup()" onkeydown="keydown()">
+<p>Hàm sẽ được kích hoạt khi người dùng thả phím trên thẻ input ở dưới.
+    Hàm sẽ hiển thị nội dung trong thẻ input sau khi phím được thả</p>
+<p> your name 's <input type="text" value="" name="input2" id="input2" onkeyup="upfunction()"></p>
+<p> My name 's <span id="output"> </span></p>
+<p name="click" id="input3">Nhấn vào đoạn văn bản này!
+    Hàm mouseDown() được kích hoạt khi bạn nhấn chuột xuống để chuyển màu của chữ sang màu đỏ.
+    Hàm mouseUp() sẽ được kích hoạt khi chuột được thả ra, màu chữ sẽ chuyển sang màu xanh lá cây.</p>
+<p> Hàm được kích hoạt khi người dùng nhấn một phím trên bàn phím vào thẻ. </p>
+<p> Ban hay nhap <span> <input type="text" name="input4" id="input4"> </span></p>
+
+</body>
+<script>
+    var input1 = document.getElementById("input1");
+    var input3 = document.getElementById("input3");
+    var input4 = document.getElementById("input4");
+
+
+
+    input3.addEventListener("mousedown",mousedown);
+    input3.addEventListener("mouseup",mouseup);
+    input4.addEventListener("keypress",keypress);
+
+    function keyup() {
+        input1.style.backgroundColor = "red";
+    }
+
+    function keydown() {
+        input1.style.backgroundColor = "green";
+    }
+
+    function upfunction() {
+        var output = document.getElementById("input2").value;
+        document.getElementById("output").innerText=output;
+    }
+    function mousedown(){
+        input3.style.color = "yellow";
+    }
+    function mouseup() {
+        input3.style.color = "black"
+    }
+    function keypress(){
+        alert("ban da nhap " + input4.value)
+    }
+</script>
+
+</html>

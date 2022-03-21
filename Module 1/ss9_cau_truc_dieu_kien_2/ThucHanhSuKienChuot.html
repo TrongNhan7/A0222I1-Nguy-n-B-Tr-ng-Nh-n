@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form>
+<img src="qua-bong-da-thi-dau-chat-luong.jpg" height="500" width="750" id="myimg"/>
+    <p>Cick để di chuyển quả bóng</p>
+    <input type="button" value="click me" onclick="moveRight()"/>
+
+</form>
+<script>
+    function init() {
+        imgobj=document.getElementById("myimg");
+        imgobj.style.position='relative';
+        imgobj.style.left= '0px';
+    }
+    function moveRight() {
+        imgobj.style.left= parseInt(imgobj.style.left) + 10 + 'px';
+    }
+    window.onload= init();
+
+</script>
+</body>
+</html>

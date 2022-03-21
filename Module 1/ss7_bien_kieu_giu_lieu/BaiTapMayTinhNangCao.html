@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <title> Caculator </title>
+        </head>
+
+        </head>
+<body>
+<h2>Caculator</h2>
+<input name="input1" id="input1"/>
+<input name="input2" id="input2"/><br><br>
+<button name="Addition" value="+" id="add">Addition(+)</button>
+<button name="Subtraction" value="-" id="sub">Subtraction(-)</button>
+<button name="Multiplication" value="*" id="mul">Multiplication(*)</button>
+<button name="Division" value="/" id="div">Division(/)</button>
+<p>Result Division: <span id="output"></span></p>
+<script>
+    let add = document.getElementById("add");
+    let sub = document.getElementById("sub");
+    let mul = document.getElementById("mul");
+    let div = document.getElementById("div");
+
+    add.addEventListener("click", chon);
+    sub.addEventListener("click", chon);
+    mul.addEventListener("click", chon);
+    div.addEventListener("click", chon);
+
+    function chon(event) {
+        let formal = `${input1.value}${event.target.value}${input2.value}`;
+        // ghép chuỗi input1 + giá trị được target của event + giá trị input2
+        console.log(formal);
+        console.log(eval(formal));
+        document.getElementById("output").innerHTML = eval(formal);
+    }
+</script>
+
+
+</body>
+</html>
+</html>

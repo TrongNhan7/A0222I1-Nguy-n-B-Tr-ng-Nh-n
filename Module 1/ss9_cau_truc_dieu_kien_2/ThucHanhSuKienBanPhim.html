@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body onload="docReady()">
+<img src="ronaldo-mu-2-0-brighton-1-f617557c.jpg" style="position:absolute;left:0; top:0;" height="250" width="300"
+     id="a7"/>
+<script>
+
+    function upArrowPressed() {
+        let element = document.getElementById("a7");
+        element.style.top = parseInt(element.style.top) - 5 + "px"
+    }
+
+    function downArrowPressed() {
+        let element = document.getElementById("a7");
+        element.style.top = parseInt(element.style.top) + 5 + "px"
+    }
+
+    function leftArrowPressed() {
+        let element = document.getElementById("a7");
+        element.style.left = parseInt(element.style.top) + 5 + "px"
+    }
+
+    function rightArrowPressed() {
+        let element = document.getElementById("a7");
+        element.style.right = parseInt(element.style.top) + 5 + "px"
+    }
+
+    function moveSelectArrow(event) {
+        switch (event.key) {
+            case 'ArrowLeft':
+                leftArrowPressed();
+                break;
+            case 'ArrowRight':
+                rightArrowPressed();
+                break;
+            case 'ArrowUp':
+                upArrowPressed();
+                break;
+            case 'ArrowDown':
+                downArrowPressed();
+                break;
+        }
+
+
+    }
+    function docReady(){
+        window.addEventListener("keypress", moveSelectArrow);
+    }
+
+</script>
+</body>
+</html>

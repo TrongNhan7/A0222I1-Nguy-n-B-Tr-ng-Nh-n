@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<input type="text" id="input1"/>
+<input type="text" id="input2"><br><br>
+<input type="button" id="sub" value="kickdo" onclick="kick()"/>
+<p id="output"></p>
+<script>
+    /* Bài 1
+    let a=parseInt(prompt("Nhập độ C"));
+    alert("Độ C = " + (a*9/5+32) + " độ");
+     */
+    /* Bài 2
+    let a=parseInt(prompt("Nhập mét"));
+    alert("Độ dài = " + (a*3.2808) + " ft");
+     */
+    /* Bài 3
+        let a=parseInt(prompt("Nhập cạnh a"));
+        alert("S hình vuông = " + (a*a) + " mm");
+     */
+    /* Bài 4
+    function kick() {
+        let a = parseInt(document.getElementById('input1').value);
+        let b = parseInt(document.getElementById('input2').value);
+        let rec=document.getElementById("output");
+        if (isNaN(a)||(isNaN(b))){
+            alert('Nhập số vào!');
+        } else {
+            rec.innerHTML='Result = ' + (a*b);
+        }
+    }
+     */
+    /* Bài 5
+    function kick() {
+        let a = parseInt(document.getElementById('input1').value);
+        let b = parseInt(document.getElementById('input2').value);
+        let rec=document.getElementById("output");
+        if (isNaN(a)||(isNaN(b))){
+            alert('Nhập số vào!');
+        } else {
+            rec.innerHTML='Result = ' + (a*b)/2;
+        }
+    }
+     */
+    /* Bài 6: cho pt ax+b=0;
+     function kick() {
+     let a = parseInt(document.getElementById('input1').value);
+     let b = parseInt(document.getElementById('input2').value);
+     let rec=document.getElementById("output");
+     if (isNaN(a)||(isNaN(b))){
+         alert('Nhập số vào!');
+     } else {
+         rec.innerHTML='Result = ' + -b/a;
+     }
+ }
+     */
+    /* Bài 6: cho pt ax^2 + bx = 0;
+        function kick() {
+            let a = parseInt(document.getElementById('input1').value);
+            let b = parseInt(document.getElementById('input2').value);
+            let rec=document.getElementById("output");
+            if (isNaN(a)||(isNaN(b))){
+                alert('Nhập số vào!');
+            } else if(a==0 && b==0){
+                rec.innerHTML='Phương trình vô số nghiệm'
+            }else if(a==0 && b!=0){
+                rec.innerHTML='Phương trình vô nghiệm';
+            }else if (a!=0 && b==0){
+                rec.innerHTML='Phương trình có nghiệm x = ' + 0;
+            }
+            else {
+                rec.innerHTML='Phương trình có nghiệm x = 0 và x =  ' + -b/a;
+            }
+        }
+     */
+    /* Bài 7
+    let a = parseInt(prompt("Nhập tuổi dô"));
+    if (isNaN(a)) {
+        alert('Nhập số dô fren');
+    } else if (a < 120 && a > 0) {
+        alert('Đúng là con người gòi đó!!!');
+    } else {
+        alert('Hãy về hành tinh của mình!!!');
+    }
+     */
+    /* Bài 8
+    let a = parseInt(prompt("Nhập a dô"));
+    let b = parseInt(prompt("Nhập b dô"));
+    let c = parseInt(prompt("Nhập c dô"));
+    if ((a&&b&&c)>0){
+    } if((a+b)>c || (b+c)>a || (a+c)>b){
+        alert('Đây chính là Tam giác');
+    } else {
+        alert('Đây là Tác giam')
+    }
+     */
+    /* Bài 9 : T = M*(1+r)^n
+    T: Số tiền phải trả
+    M: Số tiền gốc
+    r: lãi suất hàng tháng
+    n: Số tháng vay
+     */
+    let M = parseInt(prompt("Nhập tiền vay"));
+    let r = parseFloat(prompt("Nhập lãi hàng tháng"));
+    let n = parseInt(prompt("Nhập só tháng vay"));
+    let T=M*(Math.pow(1+r,n));
+    alert('Sô tiền phải trả = ' + T);
+
+
+
+
+
+
+</script>
+</body>
+</html>

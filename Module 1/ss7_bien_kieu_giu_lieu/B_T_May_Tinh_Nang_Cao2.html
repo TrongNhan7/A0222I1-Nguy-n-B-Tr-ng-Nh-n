@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator Plus</title>
+    <style>
+        form {
+            margin: 0px auto;
+            background-color: azure;
+            width: 520px;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        .t1 {
+            width: 450px;
+            height: 200px;
+            background-color: aliceblue;
+            color: black;
+            border-collapse: collapse;
+            font-size: 50px;
+            text-align: right;
+        }
+        .b1 {
+            width: 90px;
+            height: 90px;
+            background-color: blanchedalmond;
+            color: blue;
+            text-align: center;
+            font-size: 50px;
+        }
+        form td{
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <fieldset>
+        <table>
+            <tr>
+                <td colspan="4">
+                    <input class="t1" id="output" name="trinh" type="text" disabled>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="button" class="b1" name="seven" value="7" onclick="display('7')"> </td>
+                <td><input type="button" class="b1" name="eight" value="8" onclick="display('8')"></td>
+                <td><input type="button" class="b1" name="nine" value="9" onclick="display('9')"></td>
+                <td><input type="button" class="b1" name="+" value="+" onclick="display('+')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="b1" name="four" value="4" onclick="display('4')"></td>
+                <td><input type="button" class="b1" name="five" value="5" onclick="display('4')"></td>
+                <td><input type="button" class="b1" name="six" value="6" onclick="display('6')"></td>
+                <td><input type="button" class="b1" name="-" value="-" onclick="display('-')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="b1" name="three" value="1" onclick="display('1')"></td>
+                <td><input type="button" class="b1" name="two" value="2" onclick="display('2')"></td>
+                <td><input type="button" class="b1" name="one" value="3" onclick="display('3')"></td>
+                <td><input type="button" class="b1" name="x" value="*" onclick="display('*')"></td>
+            </tr>
+            <tr>
+                <td><input type="button" class="b1" name="clear" value="C" onclick="nutC()"></td>
+                <td><input type="button" class="b1" name="zero" value="0" onclick="display('0')"></td>
+                <td><input type="button" class="b1" name="doit" value="=" onclick="slove()"></td>
+                <td><input type="button" class="b1" name="/" value="/" onclick="display('/')"></td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+<script>
+  // dùng hàm với tham số val , giá trị lấy ra output tương ứng tham số ta click
+    function display(val) {
+document.getElementById("output").value +=val;
+    }
+  // làm dấu = với eval là dùng để tính ra ket qua
+    function slove() {
+     let x=document.getElementById("output").value;
+     let y =eval(x)
+        document.getElementById("output").value = y;
+    }
+    function nutC() {
+        document.getElementById("output").value = ""
+
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        h1 {
+            position: relative;
+            left: 300px;
+            top: 200px;
+        }
+        #y {
+            position: relative;
+            left: 320px;
+            top: 200px;
+        }
+        #n {
+            position: relative;
+            left: 340px;
+            top: 200px;
+        }
+    </style>
+</head>
+<body>
+<h1>Do you love me?</h1>
+<button type="button" id="y" onclick="click1()">YES</button>
+<button type="button" id="n" onmouseover="click2()">NO</button>
+<script>
+    function click1() {
+        alert('<3');
+    }
+    function click2() {
+        let x=Math.round(Math.random() * window.innerWidth);
+        let y=Math.round(Math.random() * window.innerHeight);
+        document.getElementById('n').style.left=x + 'px';
+        document.getElementById('n').style.top=y + 'px';
+
+    }
+</script>
+</body>
+</html>

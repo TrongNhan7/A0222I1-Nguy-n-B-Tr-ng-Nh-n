@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th,td {
+            border: 1px solid white;
+            text-align: center;
+        }
+    </style>
+    <script src="BaiTapDoiTienTe.js"></script>
+</head>
+<body>
+<form>
+    <table>
+        <tr>
+            <th>From Currency</th>
+            <th>To Currency</th>
+            <th>Amount</th>
+        </tr>
+        <tr>
+            <td>
+                <select id="a" name="">
+                    <option value="Việt Nam">Việt Nam</option>
+                    <option value="USD">USD</option>
+                </select>
+            </td>
+            <td>
+                <select id="b" name="">
+                    <option VALUE="USD">USD</option>
+                    <option value="Việt Nam">Việt Nam</option>
+                </select>
+            </td>
+            <td>
+                <input type="text" name="nhaptien" id="c" size="10px">
+            </td>
+            <td>
+                <button type="button" onclick="kick()">Convert</button>
+            </td>
+        </tr>
+    </table>
+    <p id="ketqua"></p>
+
+</form>
+</body>
+</html>
