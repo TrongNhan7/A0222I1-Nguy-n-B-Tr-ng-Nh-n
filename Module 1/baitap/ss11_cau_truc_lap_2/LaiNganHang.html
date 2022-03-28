@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+let M = parseInt(prompt("Nhập tiền vay"));
+let r = parseFloat(prompt("Nhập lãi hàng tháng"));
+let n = parseInt(prompt("Nhập só tháng vay"));
+let result = M;
+//  T=M*(1+r)^n;
+
+for (let i=1; i<=n; i++){
+    result =  result * (1+r);
+}
+document.write(result);
+</script>
+</body>
+</html>

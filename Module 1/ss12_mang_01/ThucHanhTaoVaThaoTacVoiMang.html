@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h2>Sample Screen:</h2>
+<input type="text" id="txt"/>
+<input type="button" id="btnadd" value="Add" onclick="kickadd()"/>
+<input type="button" id="btnDis" value="Display" onclick="kickDisplay()"/>
+<div id="result"></div>
+<script>
+    let x = 0;
+    let array = new Array();
+
+    function kickadd() {
+        array[x] = document.getElementById('txt').value;
+        alert("Element : " + array[x] + " Add the index " + x);
+        x++;
+        document.getElementById('txt').value = "";
+    }
+
+    function kickDisplay() {
+        let e = "<hr/>";
+        for (let i=0; i< array.length; i++){
+            e += "Element " + i + " = " + array[i] + "<br>";
+        }
+        document.getElementById("result").innerHTML= e;
+
+            }
+</script>
+</body>
+</html>

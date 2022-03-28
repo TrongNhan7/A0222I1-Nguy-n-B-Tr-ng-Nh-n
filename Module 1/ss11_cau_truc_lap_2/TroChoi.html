@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #nut {
+            display: block;
+            margin: 0 auto;
+            width: 500px;
+            height: 100px;
+            margin-top: 150px;
+            background-color: red;
+            font-size: 70px;
+            font-family: Candara;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="Chơi" onclick="kick()" id="nut"/>
+<script>
+    function kick() {
+        let nhapSoDau = parseInt(prompt("Nhập số đầu của khoảng", ""));
+        let nhapSoSau = parseInt(prompt("Nhập số sau của khoảng", ""));
+        let random = Math.floor(Math.random() * (nhapSoSau - nhapSoDau + 1) + nhapSoDau);
+        for (let i = 1; i <= 3; i++) {
+            let doanso = parseInt(prompt("Nhập số loto", ""));
+            if (doanso == random) {
+                alert("Chúc mừng trúng số!!!");
+                break;
+            } else {
+                if (doanso > random) {
+                    alert("Hoi cao rồi fren");
+                } else {
+                    (doanso < random)
+                    alert("Lại hơi thấp rồi fren");
+                }
+            }
+        }
+        alert("Kết thúc trò chơi");
+    }
+
+</script>
+</body>
+</html>

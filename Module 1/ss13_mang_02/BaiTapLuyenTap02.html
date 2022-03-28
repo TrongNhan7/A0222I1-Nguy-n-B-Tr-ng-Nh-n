@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div id="result0"></div>
+<div id="result1"></div>
+<div id="result2"></div>
+<div id="result3"></div>
+<div id="result4"></div>
+<div id="result5"></div>
+
+<script>
+    let b0 = "";
+    let a = [
+        [1, 2, 1, 24],
+        [8, 11, 9, 4],
+        [7, 0, 7, 27],
+        [7, 4, 28, 14],
+        [3, 10, 26, 7]
+    ];
+
+    // for (let i in a){
+    for (let i = 0; i < a.length; i++) {
+        b0 += "row " + i + "<br>";
+        //   for (let j in a[i]){
+        for (let j = 0; j < a[i].length; j++) {
+            b0 += a[i][j] + "<br>";
+        }
+    }
+    let c = a.reverse();
+    let c0 = "<hr>";
+    for (let i = 0; i < c.length; i++) {
+        c0 += "row " + i + "<br>";
+        //   for (let j in a[i]){
+        for (let j = 3; j >= 0; j--) {
+            c0 += c[i][j] + "<br>";
+        }
+    }
+// In giá trị chuỗi
+    let d = ["Anh", "Khải", "là", "animal", "hình", "người"];
+    let d0 = "";
+    for (let i = 0; i < d.length; i++) {
+        d0 += d[i] + " có index = " + d.indexOf(d[i]) + "<br>";
+    }
+// Đếm số ký tự
+    let e = "Nhất niệm tựa thiên thu !";
+    let e1 = "n"
+    let e0 = "<hr>" + "Chuỗi e có : " + e.length + " ký tự";
+    let e2= e.split(e1).length-1;
+// Đổi "-" sang "_"
+    let g = "/*-09-08-09-8091283-0912-038120730=.786-";
+    let g0 = "<hr>";
+    for (let i=0; i<g.length; i++) {
+        g0 += g[i].replace("-", "_");
+    }
+
+
+    document.getElementById("result0").innerHTML = b0;
+    document.getElementById("result1").innerHTML = c0;
+    document.getElementById("result2").innerHTML = d0;
+    document.getElementById("result3").innerHTML = e0;
+    document.getElementById("result4").innerHTML = "Ký tự n có " + e2 + " lần lặp";
+    document.getElementById("result5").innerHTML = g0;
+</script>
+</body>
+</html>

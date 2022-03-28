@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <h1>Type anything slowly</h1>
+        <textarea cols="30" rows="5" onkeydown="go()" id="output"></textarea>
+    </form>
+    <script>
+        let result = document.getElementById('output');
+        let data = '';
+        let text = [];
+        text[1] = 'T';
+        text[2] = 'ô';
+        text[3] = 'i';
+        text[4] = ' ';
+        text[5] = 'l';
+        text[6] = 'à';
+        text[7] = ' ';
+        text[8] = 's';
+        text[9] = 'ú';
+        text[10] = 'c';
+        text[11] = ' ';
+        text[12] = 'v';
+        text[13] = 'ậ';
+        text[14] = 't';
+        text[15] = ' ';
+        text[16] = 'Q';
+        text[17] = 'u';
+        text[18] = 'ậ';
+        text[19] = 'y';
+        text[20] = '!';
+        text[21] = '';
+
+        function go() {
+            let a=result.value;
+            let j=a.length;
+            if (j>0){
+                for (let i=1; i<= j; i++){
+                    data += text[i];
+                    if (i == 21){
+                        result.value='';
+                        data='';
+                    }
+                }
+            }
+            result.value=data;
+            data='';
+        }
+    </script>
+</body>
+
+</html>
