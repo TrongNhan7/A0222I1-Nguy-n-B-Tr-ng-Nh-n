@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    let number = parseInt(prompt("Nhập số lượng số nguyên tố cần tìm"));
+    let count = 0;
+    let N = 2;
+    let result = '';
+
+    function check_SNT(u) {
+        if (u < 2) {
+            alert("Nhập số lớn hơn 2 đi fren");
+            return false;
+        } else if (u == 2) {
+            return true;
+        } else if (u % 2 == 0) {
+            return false;
+        } else {
+            for (let i = 3; i < Math.sqrt(u); i += 2) {
+                if (u % i == 0) {
+                    return false;
+                    break;
+                }
+            }
+        }
+        return true;
+    }
+
+    while (count < number) {
+        if (check_SNT(N)) {
+            count += 1;
+            result += N + ',';
+        }
+        N += 1;
+    }
+    document.write(result);
+</script>
+</body>
+</html>

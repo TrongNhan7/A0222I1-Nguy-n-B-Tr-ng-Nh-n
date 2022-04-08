@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="input_text"/>
+<input type="button" onclick="kick()" value="Check"/>
+<p id="result"></p>
+
+<script>
+/*
+    let result = document.getElementById("result");
+    function isChecker(string) {
+        if (string[0] == string[string.length - 1]) {
+            if (string.length == 1) {
+                return true;
+            } else {
+                string = string.slice(1, string.length - 1);
+                return isChecker(string);
+            }
+        } else {
+            return false;
+        }
+    }
+
+    function kick() {
+        let str = document.getElementById("input_text").value;
+        let arrStr = str.split("");
+        if (isChecker(arrStr)) {
+            result.innerHTML = " String is Palindrome";
+        } else {
+            result.innerHTML = " String is not Palindrome";
+        }
+    }
+*/
+
+     function isChecker(str1) {
+        for (let i = 0; i < (str1.length) / 2; i++) {
+            if (str1[i] != str1[str1.length - (1 + i)]) {
+                return false;
+            }
+            } return true;
+    }
+    function kick() {
+        let str = document.getElementById("input_text").value;
+        let arrStr = str.split("");
+        if(isChecker(arrStr)){
+            result.innerHTML = " String is Palindrome";
+        } else {
+            result.innerHTML = " String is not Palindrome";
+        }
+
+    }
+
+</script>
+</body>
+</html>

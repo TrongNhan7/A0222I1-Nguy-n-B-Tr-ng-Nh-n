@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /* Bài 1
+    function squaring(number) {
+        return number * number;
+    }
+    console.log(squaring(10));
+     */
+    /* Bài 2
+    function countCircle(R) {
+        let c = 2 * 3.14 * R;
+        let s = 3.14 * R * R;
+        return [c,s];
+    }
+    let giaTri= countCircle(10);
+    console.log(parseInt(giaTri[0]));
+    console.log(parseInt(giaTri[1]));
+     */
+    /* Bài 3
+        function countFactorial(number) {
+            if (isNaN(number) == true) {
+                alert("Nhập số dô");
+            }
+            if (number > 0) {
+                let result = 1;
+                for (let i = 1; i <= number; i++) {
+                    result = result * i;
+                }
+                return result;
+            }
+        }
+        console.log(countFactorial(6));
+     */
+    /* Bài 4
+    function checkNumber(number) {
+        if (isNaN(number)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    let num = parseInt(prompt("Nhập số dô"));
+    document.write(checkNumber(num));
+     */
+    /* Bài 5
+    let getNumber1 = parseInt(prompt("Nhập số 1"));
+    let getNumber2 = parseInt(prompt("Nhập số 2"));
+    let getNumber3 = parseInt(prompt("Nhập số 3"));
+
+    function minNumber(number1, number2, number3) {
+        let min = number1;
+        if (min > number2) {
+            min = number2;
+        }
+        if (min > number3) {
+            min = number3;
+        }
+        return min;
+    }
+    console.log(minNumber(getNumber1, getNumber2, getNumber3));
+     */
+    /* Bài 6
+    function checkNumber(number) {
+        if (isNaN(number)) {
+            return false;
+        }
+        if (number <= 0) {
+            return false;
+        }
+        if (number > 0) {
+            return true;
+        }
+    }
+    let num= parseInt(5);
+    console.log(checkNumber(num));
+     */
+    /* Bài 7
+    let getNumber1 = parseInt(prompt("Nhập số 1"));
+    let getNumber2 = parseInt(prompt("Nhập số 2"));
+
+    function swapNumber(number1, number2) {
+        let a = number1;
+        number1 = number2;
+        number2 = a;
+        return [number1,number2];
+    }
+    let num=swapNumber(getNumber1,getNumber2);
+    console.log(num[0]);
+    console.log(num[1]);
+     */
+    /* Bài 8
+    let array = [2, 5, 12, 45, 23, 7, 1, 3, 9];
+
+    function swapArray(arr) {
+        return arr.reverse();
+    }
+    console.log(swapArray(array));
+     */
+    let addStr = prompt("Nhập gì thì nhập");
+    let array = addStr.split("");
+
+    function checkKyTu(arr) {
+        let kyTuCanTim = prompt("Nhap ky tu can tim")
+        let result = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == kyTuCanTim) {
+                result += 1;
+            }
+        }
+        if (result == 0) {
+            return -1;
+        } else {
+            return result;
+        }
+    }
+
+    document.write(checkKyTu(array));
+
+</script>
+</body>
+</html>

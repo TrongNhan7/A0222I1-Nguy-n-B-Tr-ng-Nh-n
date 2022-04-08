@@ -7,27 +7,31 @@
 <body>
 <form>
     <input type="text" id="input"/>
-    <input type="text" id="ouput" disabled/><br><br>
+    <br><br>
     <input type="button" value="Kickdo" onclick="kick()"/>
     <p> english= ['The','human','punch','inthe','mouth','animal']</p>
     <p>vietnamese= ['Anh','Nhan','dam','vao','mo','Quay'];</p>
+    <div id="output"></div>
     <script>
         let english = ['The', 'human', 'punch', 'inthe', 'mouth', 'animal'];
         let vietnamese = ['Anh', 'Nhan', 'dam', 'vao', 'mo', 'Quay'];
-        let a = document.getElementById('input').value;
-        let result = document.getElementById('ouput');
+
 
         function kick() {
+            let a = document.getElementById('input').value;
+            let result = document.getElementById("output");
             for (let i = 0; i < english.length; i++) {
                 if (a == english[i]) {
                     result.innerHTML = vietnamese[i];
                     break;
-                } else {
-                    alert('Ko có my fren')
-                    break;
+                }
+                if (i == english.length - 1) {
+                    result.innerHTML = "Khong co gia tri trong mang";
                 }
             }
         }
+
+
     </script>
 </form>
 </body>

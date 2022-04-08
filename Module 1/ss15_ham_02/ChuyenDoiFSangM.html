@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function footToMeter(foot) {
+        if (foot <= 0) {
+            return false;
+        } else {
+            return 0.305 * foot;
+        }
+    }
+    let number = 10;
+    let doiFToM = footToMeter(number);
+    document.write(number + " feet" + "=" + doiFToM + " meter");
+    function meterToFoot(meter) {
+        if (meter <= 0) {
+            return false;
+        } else {
+            return 3.279 * meter;
+        }
+    }
+
+    let number2 = 21;
+    let doiMToF = meterToFoot(number2);
+    document.write("<br>" + number2 + " meter" + "=" + doiMToF + " feet");
+
+</script>
+</body>
+</html>

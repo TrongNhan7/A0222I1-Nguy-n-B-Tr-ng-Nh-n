@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="input"/>
+<input type="button" onclick="kick()" value="kick"/>
+<div id="output"></div>
+<script>
+    /* Bài 1
+    function alertMessage(mes) {
+        alert(mes);
+    }
+    let message= " Xin Chao ";
+     alertMessage(message);
+     */
+
+    /* Bài 2
+    function increaseNum(number) {
+       return number += 1;
+    }
+    let num= 10;
+    alert(parseInt(increaseNum(num)));
+     */
+    /* Bai 3
+        function totalTs(number1,number2) {
+            if (number1>number2){
+                alert("Nhập lại cho num 2 phải hơn num 1");
+            } else {
+                return number1 + number2;
+            }
+        }
+        alert(totalTs(0,20));
+     */
+    /* Bài 4
+    function addNumbers(firstNum,secondNum) {
+        result = firstNum + secondNum;
+        return result;
+    }
+
+    result = 0;
+    alert("Giá trị ban đầu " + result);
+    result = addNumbers(8,6);
+    alert("Giá trị khi cộng 2 tham số " + result);
+     */
+    let arrayStar1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let arrayStar2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let result = document.getElementById("output");
+
+    function checkArray(arr) {
+        for (let i = 0; i < arrayStar1.length; i++) {
+            if (arr == arrayStar1[i]) {
+                return (arrayStar2[i]);
+                break;
+            }
+        }
+        return "Khong co gia tri trong mang";
+    }
+
+    function kick() {
+        let input = document.getElementById("input").value;
+        result.innerHTML = "Result : " + checkArray(input);
+    }
+
+
+</script>
+</body>
+</html>

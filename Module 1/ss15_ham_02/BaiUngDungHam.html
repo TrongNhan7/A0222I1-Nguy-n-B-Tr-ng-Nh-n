@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: fuchsia;
+        }
+
+        table {
+            width: 700px;
+            border-collapse: collapse;
+
+        }
+
+        th {
+            text-align: center;
+            padding: 10px;
+        }
+
+        td {
+            text-align: left;
+            padding: 8px;
+            font-family: "Courier New";
+            font-size: 20px;
+
+        }
+
+        #num_product {
+            color: red;
+            font-size: 15px;
+            font-family: Constantia;
+        }
+
+        .stt {
+            text-align: center;
+        }
+
+        .edit {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .delete {
+            background-color: yellow;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        fieldset {
+            background-color: green;
+            width: 400px;
+            padding-bottom: 30px;
+        }
+
+        tr:nth-child(even) {
+            background-color: hotpink;
+        }
+
+        #add_product {
+            width: 60%;
+            border-radius: 4px;
+            font-family: Gigi;
+            padding: 5px 5px;
+        }
+
+        #edit_product {
+            width: 60%;
+            border-radius: 4px;
+            font-family: Gigi;
+            padding: 5px 5px;
+        }
+
+        .button {
+            background-color: darkorange;
+            color: white;
+            padding: 9px 15px;
+            border: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<form>
+    <fieldset>
+        <legend style="color: aqua"><h3>Add New Product</h3></legend>
+        <input type="text" id="add_product"/>
+        <input type="button" value="Add" onclick="addProduct()" class="button"/>
+    </fieldset>
+</form>
+<h3>Display All Product</h3>
+<table>
+    <tr>
+        <th>Stt</th>
+        <th style="text-align: left">Product Name</th>
+        <th colspan="2" style="text-align: right">
+            <p id="num_product"></p>
+        </th>
+    </tr>
+    <tbody id="table_products"></tbody>
+</table>
+
+<form>
+    <fieldset style="color: aqua;">
+        <legend><h3>Edit Product</h3></legend>
+        <input type="text" id="edit_product"/>
+        <input type="button" value="SaveEdit" onclick="saveEdit()" class="button"/>
+    </fieldset>
+</form>
+<script>
+    let product = ["Sony", "Samsung", "Nokia", "Iphone", "LG"];
+    let divTable = document.getElementById("table_products");
+    let addPro = document.getElementById("add_product");
+    let inputEdit = document.getElementById("edit_product");
+    let numProducts = document.getElementById("num_product");
+    let indexSave = 0;
+
+
+    function getProduct(arr) {
+        let data = "";
+        for (let i = 0; i < arr.length; i++) {
+            data += '<tr>';
+            data += '<td class="stt">' + (i + 1) + '</td>';
+            data += '<td>' + arr[i] + '</td>';
+            data += '<td><button class="edit" onclick="kickEdit(' + i + ')">Edit</button>';
+            data += '<td><button class="delete" onclick="kickDelete(' + i + ')">Delete</button>';
+            data += '</tr>';
+        }
+        divTable.innerHTML = data;
+    }
+
+    function addProduct() {
+        product.push(addPro.value);
+        getProduct(product);
+        addPro.value = "";
+        countProduct(product);
+    }
+
+    function countProduct(product) {
+        numProducts.innerHTML = product.length + " products";
+    }
+
+    function kickEdit(i) {
+        inputEdit.value = product[i];
+        indexSave = i;
+    }
+
+    function kickDelete(i) {
+        product.splice(i, 1);
+        getProduct(product);
+    }
+
+
+    function saveEdit() {
+        product[indexSave] = inputEdit.value;
+        getProduct(product);
+    }
+
+    getProduct(product);
+    countProduct(product);
+
+
+</script>
+</body>
+</html>
