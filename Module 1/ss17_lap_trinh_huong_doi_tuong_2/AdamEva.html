@@ -78,13 +78,21 @@
     }
 
     let apple = new Apple(10);
-    let adam = new Human("Adam", 70);
-    adam.speak()
+    let adam = new Human("asdasd", 70);
+    let eva = new Human("fdfdfasd", 90);
+    adam.speak("Dam danh an cua bo")
+    eva.speak("dasdsadsad")
     adam.setGender("Male");
-    adam.eatApple(apple);
-    adam.eatApple(apple);
-    adam.eatApple(apple);
+    eva.setGender("Female");
+    adam.setName("Adam");
+    eva.setName("Eva");
+
+    while (apple.kl>0){
+        adam.eatApple(apple);
+        eva.eatApple(apple);
+    }
     console.log(adam);
+    console.log(eva);
     console.log(apple);
 
 </script>
