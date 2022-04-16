@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="result"></p>
+<script>
+    let Temperature = function (C) {
+        this.C = C;
+        this.getFahrenheit = function () {
+            return (C * 1.8) + 32;
+        }
+        this.getKevin = function () {
+            if (C == 0) {
+                return 273.15;
+            } else {
+                return C * 273.15;
+            }
+        }
+    }
+    let result = document.getElementById("result");
+    let temperature = new Temperature(parseInt(prompt("Nhap do C vao !!!")));
+    result.innerHTML = temperature.C + " do " + " C = " + temperature.getFahrenheit() + " do F" + "<br>";
+    result.innerHTML += temperature.C + " do " + " C = " + temperature.getKevin() + " do K";
+</script>
+</body>
+</html>

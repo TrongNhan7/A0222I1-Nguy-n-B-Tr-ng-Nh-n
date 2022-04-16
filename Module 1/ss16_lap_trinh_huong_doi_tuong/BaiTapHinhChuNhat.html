@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"></canvas>
+<p id="result"></p>
+<script>
+    let result = document.getElementById("result");
+    let Rectangle = function (w, h) {
+        this.w = w;
+        this.h = h;
+        this.getPerimeter = function (){
+            return 2*(w + h);
+        }
+        this.getArea = function () {
+            return w * h;
+        }
+    }
+    function createRectangle(width, height) {
+        let ctx = document.getElementById("myCanvas").getContext("2d");
+        let rectangle = new Rectangle(width, height);
+        ctx.fillRect(400, 200 , rectangle.w , rectangle.h);
+        ctx.stroke();
+        result.innerHTML = "width : " + rectangle.w + " Height : " + rectangle.h + "<br>";
+        result.innerHTML += "S = " + rectangle.getArea() + "<br>";
+        result.innerHTML += "C = " + rectangle.getPerimeter();
+    }
+    createRectangle(200, 100);
+    Rectangle.prototype.setRec = function (w, h) {
+        this.w = w;
+        this.h = h;
+    }
+
+
+
+
+</script>
+</body>
+</html>

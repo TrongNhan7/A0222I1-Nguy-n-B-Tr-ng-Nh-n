@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả điện thoại</title>
+</head>
+<body>
+<script>
+    let Mobile = function (batterylife) {
+        if (batterylife < 0 || batterylife > 100) {
+            throw Error("Ko sử dụng dc");
+        }
+        this.batterylife = Math.min(batterylife, 100);
+        this.contextMess = "";
+        this.inboxMess = "";
+        this.sentMess = "";
+        this.isOn = true;
+        this.turnOn = function () {
+            if (this.isOn) return true;
+        }
+        this.turnOff = function () {
+            if (!this.isOn) return false;
+        }
+        this.checkStatus = function () {
+            if (this.turnOn() && this.batterylife > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        this.refillMoblie = function (time) {
+            if (this.batterylife < 100) {
+                this.batterylife = time;
+            }
+        }
+        this.textingMess = function (mess) {
+            if (!this.isOn) {
+                return false
+            } else {
+                this.contextMess = mess;
+                this.reduceBatteryLife();
+            }
+        }
+        this.receiveMess = function (cxtMess) {
+            if (!this.isOn) {
+                return false
+            } else {
+                this.inboxMess = cxtMess;
+                this.reduceBatteryLife();
+            }
+        }
+        this.sentMes = function (moblie) {
+            if (!this.isOn) {
+                return false
+            } else {
+                moblie.receiveMess(this.contextMess);
+                this.sentMess = this.contextMess;
+                this.contextMess = "";
+                this.reduceBatteryLife();
+            }
+        }
+        this.seeMessBox = function () {
+            if (!this.isOn) {
+                return false
+            } else {
+                this.reduceBatteryLife();
+                return this.inboxMess;
+
+            }
+        }
+        this.seeMessSend = function () {
+            if (!this.isOn) {
+                return false
+            } else {
+                this.reduceBatteryLife();
+                return this.sentMess;
+
+            }
+        }
+        this.reduceBatteryLife = function () {
+            return this.batterylife -= 1;
+        }
+    }
+    let nokia = new Mobile(30);
+    let iphone = new Mobile(20);
+    let text = prompt("Gui gi thi gui");
+    let result1 = "";
+    let result2 = "";
+    nokia.turnOn();
+    iphone.turnOn();
+    while (nokia.checkStatus()) {
+        nokia.textingMess(text);
+        nokia.sentMes(iphone);
+        result1 += "Tin Iphone nhận : " + iphone.seeMessBox() + "<br>";
+        result2 += "Tin Nokia gửi : " + nokia.seeMessSend() + "<br>";
+    }
+    document.write(result1);
+    document.write(result2);
+    nokia.refillMoblie(100);
+
+</script>
+</body>
+</html>

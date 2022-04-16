@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="200" height="100" ></canvas>
+<script>
+    // Vẽ đường thẳng
+    let c = document.getElementById("myCanvas");
+    let ctx = c.getContext("2d");
+    ctx.moveTo(0,0); // Tọa độ ban đầu star( x , y )
+    ctx.lineTo(200,100); // Tọa độ kết thúc stop( x , y )
+    ctx.stroke(); // Để vẽ nét
+
+    // Vẽ hình tròn
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(95,50,40,0,2*Math.PI); // (x, y, r, star, stop)
+    ctx.stroke();
+
+    // Vẽ chữ với fillText
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.font = "30px Arial";
+    ctx.fillText("Hello World",10,50);
+    // Vẽ chữ với strokeText
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.font = "30px Arial";
+    ctx.strokeText("Hello World",10,50);
+
+    // Hiệu ứng Gradient
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    // Create gradient
+    var grd = ctx.createLinearGradient(0,0,200,0); // quét từ 1 phía
+    grd.addColorStop(0,"red");
+    grd.addColorStop(1,"white");
+
+    // + Fill with gradient
+    ctx.fillStyle = grd;
+    ctx.fillRect(10,10,150,80);
+
+
+
+    // Create gradient tròn
+    var grd = ctx.createRadialGradient(75,50,5,90,60,100); // quét từ tâm
+    grd.addColorStop(0,"red");
+    grd.addColorStop(1,"white");
+</script>
+</body>
+</html>

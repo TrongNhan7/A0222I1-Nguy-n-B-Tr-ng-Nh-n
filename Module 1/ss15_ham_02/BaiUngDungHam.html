@@ -134,26 +134,35 @@
             data += '</tr>';
         }
         divTable.innerHTML = data;
+        countProduct(product);
     }
 
     function addProduct() {
-        product.push(addPro.value);
+        if (addPro.value != "") {
+            product.push(addPro.value);
+        } else {
+            alert("Nhập chi đi fren!")
+        }
         getProduct(product);
         addPro.value = "";
-        countProduct(product);
     }
 
     function countProduct(product) {
         numProducts.innerHTML = product.length + " products";
     }
 
-    function kickEdit(i) {
-        inputEdit.value = product[i];
-        indexSave = i;
+    function kickEdit(index) {
+        inputEdit.value = product[index];
+        indexSave = index;
+
+
     }
 
-    function kickDelete(i) {
-        product.splice(i, 1);
+    function kickDelete(index) {
+        let conf = confirm("Bạn muốn xóa sản phẩm ? " + product[index]);
+        if (conf) {
+            product.splice(index, 1);
+        }
         getProduct(product);
     }
 
